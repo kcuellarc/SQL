@@ -1,0 +1,31 @@
+--Create a clothing store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, color TEXT, price INTEGER, quantity INTEGER, aisle INTEGER);
+
+INSERT INTO store VALUES(1, "shirt", "red", 10, 5, 1);
+INSERT INTO store VALUES(2, "skirt", "black", 12, 5, 5);
+INSERT INTO store VALUES(3, "hoodie", "blue", 15, 3, 2);
+INSERT INTO store VALUES(4, "pants", "khaki", 7, 4, 5);
+INSERT INTO store VALUES(5, "leggings", "black", 6, 10, 3);
+INSERT INTO store VALUES(6, "blouse", "pink", 8, 5, 1);
+INSERT INTO store VALUES(7, "dress", "red", 12, 5, 6);
+INSERT INTO store VALUES(8, "t-shirt", "green", 6, 10, 2);
+INSERT INTO store VALUES(9, "jacket", "black", 10, 10, 5);
+INSERT INTO store VALUES(10, "sweater", "brown", 8, 5, 4);
+INSERT INTO store VALUES(11, "shorts", "blue", 6, 8, 3);
+INSERT INTO store VALUES(12, "coat", "black", 15, 4, 7);
+INSERT INTO store VALUES(13, "trousers", "brown", 12, 10, 6);
+INSERT INTO store VALUES(14, "belts", "black", 17, 25, 7);
+INSERT INTO store VALUES(15, "overalls", "blue", 20, 10, 5);
+
+--display the database ordered by price.
+SELECT * FROM store ORDER BY price asc;
+
+--what is the avg price of items in the clothing store?
+SELECT AVG(price) FROM store;
+
+--what is the sum of items in each isle?
+SELECT aisle, SUM(quantity) FROM store GROUP BY aisle;
+
+--what is the sum of items from each color?
+SELECT color, SUM(quantity) FROM store GROUP BY color;

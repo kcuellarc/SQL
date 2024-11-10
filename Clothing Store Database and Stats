@@ -19,13 +19,22 @@ INSERT INTO store VALUES(14, "belts", "black", 17, 25, 7);
 INSERT INTO store VALUES(15, "overalls", "blue", 20, 10, 5);
 
 --display the database ordered by price.
-SELECT * FROM store ORDER BY price asc;
+SELECT *
+FROM store
+ORDER BY price asc;
 
 --what is the avg price of items in the clothing store?
-SELECT AVG(price) FROM store;
+SELECT AVG(price)
+FROM store;
 
 --what is the sum of items in each isle?
-SELECT aisle, SUM(quantity) FROM store GROUP BY aisle;
+SELECT aisle
+SUM(quantity)
+FROM store
+GROUP BY aisle;
 
 --what is the sum of items from each color?
-SELECT color, SUM(quantity) FROM store GROUP BY color;
+SELECT color
+SUM(quantity)
+FROM store
+GROUP BY color;

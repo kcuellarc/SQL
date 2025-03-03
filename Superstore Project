@@ -25,35 +25,35 @@ VALUES
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
---This query will order the items by price.
+-- This query will order the items by price.
 SELECT item_name, price
 FROM superstore
 ORDER BY price;
 
---This query will show the sum price total.
+-- This query will show the sum price total.
 SELECT SUM(price)
 FROM superstore;
 
---This query will show the maximum amount spent.
+-- This query will show the maximum amount spent.
 SELECT MAX(price)
 FROM superstore;
 
---This query will show the sum price spent listing by each item.
+-- This query will show the sum price spent listing by each item.
 SELECT SUM(price), item_name
 FROM superstore
 GROUP BY item_name;
 
---This query will show the average price spent for Kitchen Supplies category.
+-- This query will show the average price spent for Kitchen Supplies category.
 SELECT AVG(price), category
 FROM superstore
 WHERE category='Kitchen Supplies';
 
---This query will show the minimum price spent for Kitchen Supplies category.
+-- This query will show the minimum price spent for Kitchen Supplies category.
 SELECT MIN(price), category
 FROM superstore
 WHERE category='Kitchen Supplies';
 
---This query will show the sum stock quantity of each item.
+-- This query will show the sum stock quantity of each item.
 SELECT SUM(stock_quantity), item_name
 FROM superstore
 GROUP BY item_name;

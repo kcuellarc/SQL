@@ -1,5 +1,3 @@
---Create a clothing store database
-
 CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, color TEXT, price INTEGER, quantity INTEGER, aisle INTEGER);
 
 INSERT INTO store VALUES(1, "shirt", "red", 10, 5, 1);
@@ -18,22 +16,22 @@ INSERT INTO store VALUES(13, "trousers", "brown", 12, 10, 6);
 INSERT INTO store VALUES(14, "belts", "black", 17, 25, 7);
 INSERT INTO store VALUES(15, "overalls", "blue", 20, 10, 5);
 
---display the database ordered by price.
+-- This will display the database ordered by price.
 SELECT *
 FROM store
 ORDER BY price asc;
 
---what is the avg price of items in the clothing store?
+--This will show what the avg price of the items in the clothing store is.
 SELECT AVG(price)
 FROM store;
 
---what is the sum of items in each isle?
+-- This will display what is sum of the items in each isle is.
 SELECT aisle
 SUM(quantity)
 FROM store
 GROUP BY aisle;
 
---what is the sum of items from each color?
+-- This will show what the sum of the items from each color is.
 SELECT color
 SUM(quantity)
 FROM store
